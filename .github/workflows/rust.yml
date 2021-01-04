@@ -15,8 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2        
+    - uses: actions/checkout@v2
+    - name: Install arm toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        target: armv7-unknown-linux-gnueabihf
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --release --target=armv7-unknown-linux-gnueabihf
     - name: Run tests
       run: cargo test --verbose
