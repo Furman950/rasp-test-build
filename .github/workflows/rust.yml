@@ -22,7 +22,7 @@ jobs:
         toolchain: stable
         target: armv7-unknown-linux-gnueabihf
     - name: Install arm gcc
-      run: apt install gcc-arm-linux-gnueabihf
+      run: sudo apt install gcc-arm-linux-gnueabihf
     - name: Build
       run: cargo build --verbose --release --target=armv7-unknown-linux-gnueabihf
     - name: Run tests
