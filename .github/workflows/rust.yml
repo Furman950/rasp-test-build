@@ -27,3 +27,8 @@ jobs:
       run: cargo build --verbose --release --target=armv7-unknown-linux-gnueabihf
     - name: Run tests
       run: cargo test --verbose
+    - name: Save binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: arm-binary
+        path: target/armv7-unknown-linux-gnueabihf/release/web-server
