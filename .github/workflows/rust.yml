@@ -19,6 +19,7 @@ jobs:
     - name: Install arm toolchain
       uses: actions-rs/toolchain@v1
       with:
+        toolchain: stable
         target: armv7-unknown-linux-gnueabihf
     - name: Build
       run: cargo build --verbose --release --target=armv7-unknown-linux-gnueabihf
